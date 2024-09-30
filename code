@@ -1,0 +1,77 @@
+from tkinter import *
+
+
+# Makes buttons do stuff
+def order():
+    coffee_logo.configure(image="")
+    coffee_text1.configure(text="")
+    coffee_text2.configure(text="")
+    coffee_text3.configure(text="")
+
+
+def home():
+    coffee_logo.configure(image=logoPhoto)
+    coffee_text1.configure(text="At our coffee cafe, we care deeply about who we are, \n who we serve, and what we do.")
+    coffee_text2.configure(text="Our mission is to ensure that every guest experiences \n genuine and sincere "
+                                "customer service")
+    coffee_text3.configure(text="customer service that warms their heart and makes \n them feel better.")
+
+
+window = Tk()
+
+window.title("Coffee")
+window.geometry('375x667')  # 375x667
+window.resizable(False, False)
+window.configure(bg='#292929')
+logoPhoto = PhotoImage(file="logo.png")
+
+# sizes = {"Small": 1.50, "Medium": 2.00, "Large": 2.50}
+
+
+# Creation of widgets
+home_Button = Button(window,
+                     text="Home",
+                     bg="#EC0F69",
+                     fg="White",
+                     font=("Comic Sans", 20),
+                     activebackground="#EC0F69",
+                     activeforeground="White", command=home)
+menu_Button = Button(window,
+                     text="Menu",
+                     bg="#EC0F69",
+                     fg="White",
+                     font=("Comic Sans", 20),
+                     activebackground="#EC0F69",
+                     activeforeground="White")
+order_Button = Button(window,
+                      text="Cart",
+                      bg="#EC0F69",
+                      fg="White",
+                      font=("Comic Sans", 20),
+                      activebackground="#EC0F69",
+                      activeforeground="White", command=order)
+
+coffee_logo = Label(window,
+                    bg="#292929",
+                    image=logoPhoto)
+coffee_text1 = Label(window,
+                     text="At our coffee cafe, we care deeply about who we are, \n who we serve, and what we do.",
+                     font=("Comic Sans", 12),
+                     bg='#292929',
+                     fg="#EC0F69")
+coffee_text2 = Label(window, text="Our mission is to ensure that every guest experiences \n genuine and sincere "
+                                  "customer service ", font=("Comic Sans", 12), bg='#292929', fg="#EC0F69")
+coffee_text3 = Label(window, text="customer service that warms their heart and makes \n them feel better.",
+                     font=("Comic Sans", 12), bg='#292929', fg="#EC0F69")
+
+# Widgets on screen
+coffee_logo.place(x=96, y=120)
+coffee_text1.place(x=0, y=320)
+coffee_text2.place(x=0, y=360)
+coffee_text3.place(x=0, y=400)
+
+home_Button.place(x=0, y=612, width=90)
+menu_Button.place(x=145, y=612, width=90)
+order_Button.place(x=283, y=612, width=90)
+
+window.mainloop()
